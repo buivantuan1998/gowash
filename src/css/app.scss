@@ -1,0 +1,134 @@
+:not(input):not(textarea) {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.toast-container {
+  > div > div {
+    padding: 12px 16px;
+    background-color: #212121;
+    color: #FFFFFFF2;
+    border-radius: 8px;
+  }
+}
+
+.zaui-sheet{
+  .zaui-sheet-content {
+    min-height: unset;
+  }
+}
+
+// css with table
+table {
+  width: 50%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+#order-detail-id {
+  width: 100%;
+  thead {
+    tr {
+      th {
+        text-align: center;
+      }
+    }
+  }
+}
+
+// Css display text in block
+.grid-6533 {
+  grid-template-columns: 65% 33%;
+  grid-column-gap: 5px;
+}
+
+.charging-history-grid-1285 {
+  grid-template-columns: 12% 85%;
+  grid-column-gap: 5px;
+}
+
+.grid-2573 {
+  grid-template-columns: 25% 73%;
+  grid-column-gap: 5px;
+}
+
+.grid-1918191919 {
+  grid-template-columns: 19% 18% 19% 19% 19%;
+  grid-column-gap: 5px;
+}
+
+.grid-row-3660 {
+  grid-template-rows: 36% 60%;
+  grid-row-gap: 2px;
+}
+
+// Css form data
+.form-submit {
+  .container {
+      padding: 20px;
+      max-width: 400px;
+      margin: 0 auto;
+      font-family: Arial, sans-serif;
+  }
+
+  .form-group {
+      margin-bottom: 15px;
+  }
+
+  .form {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .input {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      color: #051122;
+      font-weight: 600;
+  }
+
+  .textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      height: 100px;
+      box-sizing: border-box;
+      color: #051122;
+      font-weight: 600;
+  }
+
+  .btn-submit {
+      padding: 10px 15px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 150px;
+  }
+}
