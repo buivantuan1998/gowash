@@ -99,61 +99,61 @@ const HomeOrderPage: React.FunctionComponent = () => {
     hideLoading();
   };
 
-  const phoneNumberLinkAgree = async () => {
-    try {
-      showLoading();
-      await authorize({
-        scopes: ["scope.userInfo", "scope.userPhonenumber"],
-      });
+  // const phoneNumberLinkAgree = async () => {
+  //   try {
+  //     showLoading();
+  //     await authorize({
+  //       scopes: ["scope.userInfo", "scope.userPhonenumber"],
+  //     });
 
-      const { token } = await getPhoneNumber();
-      console.log("token", token);
-      const accessToken = await getAccessToken({});
-      console.log("accessToken", accessToken);
-      const res = await ZaloApi.getPhone(accessToken, token);
-      console.log("ZaloApi.getPhone", res);
-      const phoneNumber = res.data?.data?.number;
-      console.log("checkLogin23", phoneNumber);
+  //     const { token } = await getPhoneNumber();
+  //     console.log("token", token);
+  //     const accessToken = await getAccessToken({});
+  //     console.log("accessToken", accessToken);
+  //     const res = await ZaloApi.getPhone(accessToken, token);
+  //     console.log("ZaloApi.getPhone", res);
+  //     const phoneNumber = res.data?.data?.number;
+  //     console.log("checkLogin23", phoneNumber);
 
-      const resRegister = await PostApi(EndpointApp.LOGIN, {
-        token: accessToken,
-        phone: phoneNumber,
-      });
-      console.log("resRegister", resRegister, resRegister?.success);
-      if (resRegister?.success == 1) {
-        updatePhoneNumber(phoneNumber);
-        updateTokenUser(resRegister?.token);
-        updateAccountData(resRegister?.account ?? {});
-        showToast({
-          message: "Đăng nhập thành công",
-          fail: (error) => {
-            console.log(error);
-          },
-        });
-        hideLoading();
-        navigate("/invoice", {
-          replace: true,
-        });
-      } else {
-        showToast({
-          message: "Không thể đăng nhập, vui lòng thử lại.",
-          fail: (error) => {
-            console.log(error);
-          },
-        });
-      }
-      hideLoading();
-    } catch (error) {
-      hideLoading();
-      console.error("authorize error", error);
-      showToast({
-        message: "Không thể đăng nhập, vui lòng thử lại.",
-        fail: (error) => {
-          console.log(error);
-        },
-      });
-    }
-  };
+  //     const resRegister = await PostApi(EndpointApp.LOGIN, {
+  //       token: accessToken,
+  //       phone: phoneNumber,
+  //     });
+  //     console.log("resRegister", resRegister, resRegister?.success);
+  //     if (resRegister?.success == 1) {
+  //       updatePhoneNumber(phoneNumber);
+  //       updateTokenUser(resRegister?.token);
+  //       updateAccountData(resRegister?.account ?? {});
+  //       showToast({
+  //         message: "Đăng nhập thành công",
+  //         fail: (error) => {
+  //           console.log(error);
+  //         },
+  //       });
+  //       hideLoading();
+  //       navigate("/invoice", {
+  //         replace: true,
+  //       });
+  //     } else {
+  //       showToast({
+  //         message: "Không thể đăng nhập, vui lòng thử lại.",
+  //         fail: (error) => {
+  //           console.log(error);
+  //         },
+  //       });
+  //     }
+  //     hideLoading();
+  //   } catch (error) {
+  //     hideLoading();
+  //     console.error("authorize error", error);
+  //     showToast({
+  //       message: "Không thể đăng nhập, vui lòng thử lại.",
+  //       fail: (error) => {
+  //         console.log(error);
+  //       },
+  //     });
+  //   }
+  // };
 
   const voteStar = async () => {
     try {

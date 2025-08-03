@@ -14,7 +14,6 @@ const saveTokenUser = async (token: string) => {
 
 const getTokenUser = async () => {
   try {
-
     const { token } = await getStorage({
       keys: ["token"],
     });

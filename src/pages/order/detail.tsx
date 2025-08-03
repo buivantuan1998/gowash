@@ -17,6 +17,8 @@ const OrderDetailPage: React.FunctionComponent = () => {
   const [star05, setStar05] = useState(false);
   const [rateStar, setRateStar] = useState(0);
   const navigate = useNavigate();
+  const params = new URLSearchParams(window.location.search);
+  const invoiceCode = params.get('invoice_code');
 
   const { id } = useParams();
   const stars = Array(5).fill(null);
@@ -33,6 +35,7 @@ const OrderDetailPage: React.FunctionComponent = () => {
 
   useEffect(() => {
     getOrders();
+    // setShowModalVote(true);
   }, []);
 
   const voteStar = async () => {
@@ -92,7 +95,7 @@ const OrderDetailPage: React.FunctionComponent = () => {
       </div>
       <div className="text-center">
         <div className="text-[18px] font-[700]">Hóa Đơn Dịch Vụ</div>
-        <div className="flex justify-center mt-[5px]">
+        <div className="flex justify-center mt-[5px]" onClick={() => setShowModalVote(true)}>
           {
             stars?.map((_, index) => (
               <div key={index} className="grid justify-center items-center">

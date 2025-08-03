@@ -43,13 +43,11 @@ const OrderLinkPage: React.FunctionComponent = () => {
     try {
       showLoading();
       const token = await AppStorage.getTokenUser();
-      console.log("tokentoken", token);
       if (!token) {
         hideLoading();
         return;
       }
       const res = await GetApi(EndpointApp.GET_INFO);
-      console.log("checkLogin", res);
     } catch (error) {
       console.error("checkLogin", error);
     }
@@ -116,7 +114,7 @@ const OrderLinkPage: React.FunctionComponent = () => {
   useEffect(() => {
     if (invoiceCode) {
       checkLogin();
-      phoneNumberLinkAgree();
+      // phoneNumberLinkAgree();
     }
   }, [invoiceCode]);
 

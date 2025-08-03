@@ -33,7 +33,7 @@
     "react-router-dom": "^6.23.0",
     "resize-observer-polyfill": "^1.5.1",
     "swiper": "^11.1.15",
-    "zmp-sdk": "^2.44.1",
+    "zmp-sdk": "^2.47.1",
     "zmp-ui": "^1.11.5",
     "zustand": "^5.0.2"
   },
