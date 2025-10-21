@@ -10,6 +10,7 @@ import HistoryWashPage from "@/pages/history-wash/index";
 import ConfirmLink from "@/pages/authentication/confirm-link";
 import HomeOrderDetail from "@/pages/home/order-detail";
 import OrderLinkPage from "@/pages/authentication/order-link";
+import QrScanPage from "@/pages/qrScan/index";
 
 import { createBrowserRouter, Form } from "react-router-dom";
 import { getBasePath } from "@/utils/zma";
@@ -103,6 +104,15 @@ const router = createBrowserRouter(
           element: <OrderLinkPage />,
           handle: {
             logo: true,
+          },
+        },
+
+        // Quét QrCode
+        {
+          path: "/qr-scan",
+          element: <QrScanPage />,
+          handle: {
+            title: "Quét QrCode",
           },
         },
       ],

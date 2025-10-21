@@ -747,3 +747,27 @@ export function SearchIconLarge() {
     </svg>
   );
 }
+
+export function QrScanIcon() {
+  return (
+    <svg
+      width="24"
+      height="24"
+      fill="none"
+      stroke="#666"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+    >
+      {/* Góc trái trên */}
+      <path d="M4 4h4v2H6v2H4V4z" />
+      {/* Góc phải trên */}
+      <path d="M20 4h-4v2h2v2h2V4z" />
+      {/* Góc trái dưới */}
+      <path d="M4 20h4v-2H6v-2H4v4z" />
+      {/* Góc phải dưới */}
+      <path d="M20 20h-4v-2h2v-2h2v4z" />
+      {/* Khung giữa */}
+      <rect x="8" y="8" width="8" height="8" rx="1" />
+    </svg>
+  )
+}

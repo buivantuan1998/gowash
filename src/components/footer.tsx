@@ -1,4 +1,4 @@
-import { CartIcon, CategoryIcon, HomeIcon, ProfileIcon, NotificationIcon  } from "./vectors";
+import { CartIcon, CategoryIcon, HomeIcon, ProfileIcon, NotificationIcon, QrScanIcon  } from "./vectors";
 import HorizontalDivider from "./horizontal-divider";
 import { useAtomValue } from "jotai";
 import { cartState } from "@/state";
@@ -14,6 +14,11 @@ const NAV_ITEMS = [
     name: "Hóa đơn",
     path: "/order",
     icon: CategoryIcon,
+  },
+  {
+    name: "Quét QrCode",
+    path: "/qr-scan",
+    icon: QrScanIcon,
   },
   {
     name: "Thông báo",

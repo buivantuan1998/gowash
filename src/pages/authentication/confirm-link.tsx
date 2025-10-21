@@ -11,9 +11,29 @@ import { GetApi, PostApi } from "@/api/baseApi";
 import { EndpointApp } from "@/api/endpoint";
 import { authorize, getAccessToken, getPhoneNumber, showToast } from "zmp-sdk";
 import { ZaloApi } from "@/api/zaloApi";
+import zmp, { GetAppInfoReturns } from "zmp-sdk";
+interface GetAppInfoWithQuery extends GetAppInfoReturns {
+  query?: Record<string, string>;
+}
 
 const ConfirmLink: FC = () => {
   const navigate = useNavigate();
+
+
+    useEffect(() => {
+    zmp.getAppInfo({
+      success: (res) => {
+        const { query } = res as GetAppInfoWithQuery;
+        // if (query?.invoice_code) {
+        //   setInvoiceCode(query.invoice_code);
+        // }
+        console.log("Query params111: ", query);
+      },
+      fail: (err) => {
+        console.error("getAppInfo error:", err);
+      }
+    });
+  }, []);
 
   const {
     showLoading,

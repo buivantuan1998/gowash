@@ -95,7 +95,7 @@ const OrderDetailPage: React.FunctionComponent = () => {
       </div>
       <div className="text-center">
         <div className="text-[18px] font-[700]">Hóa Đơn Dịch Vụ</div>
-        <div className="flex justify-center mt-[5px]" onClick={() => setShowModalVote(true)}>
+        <div className="flex justify-center mt-[5px]">
           {
             stars?.map((_, index) => (
               <div key={index} className="grid justify-center items-center">
